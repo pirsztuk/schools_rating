@@ -1,11 +1,19 @@
 version: '3.8'
 services:
-  web:
+  frontend:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.react
     ports:
       - "3000:3000"
     volumes:
       - ./frontend/main_app/:/app
       - /app/node_modules
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.django
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend/main_app:/backend

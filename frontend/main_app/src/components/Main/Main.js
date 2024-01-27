@@ -1,4 +1,6 @@
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { sendRequest } from '../../utils/api';
 
 
 function Main() {
@@ -10,6 +12,12 @@ function Main() {
     ];
 
     const sortedRatings = ratings.sort((a, b) => b.points - a.points);
+
+    useEffect(() => {
+        // URL для отправки запроса
+        const url = 'http://127.0.0.1:8000/main/is_logged';
+        sendRequest(url);
+    }, []); 
 
     return (
         
