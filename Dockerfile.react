@@ -20,5 +20,4 @@ RUN npm run build
 RUN npm install -g serve
 
 # Запускаем сервер
-CMD ["serve", "-s", "build", "-l", "3000", "--single"]
-
+CMD ["serve", "-s", "build", "-l", "3000"]
